@@ -1,11 +1,7 @@
 #include <iostream>
 #include <unistd.h> // getpid()
 
-struct Cell {
-    int x;
-    int y;
-};
-
+#include "board.h"
 
 void check_alignment()
 {
@@ -32,6 +28,9 @@ int main()
     std::cin.get(); // waiting for one character from command line input
 
     check_alignment();
+
+    Board board;
+    board.print();
 
     return 0;
 }
