@@ -71,3 +71,21 @@ git commit -m "Init commit"
 Более компактный вывод:
 
 `git log --oneline`
+
+Далее добавим в `main.cpp` структуру `Cell`. Введём команду `git diff`, увидим, какие строки мы добавили / изменили в `main.cpp` по сравнению с состоянием этого файла в последнем коммите. Если мы хотим откатиться к исходному состоянию `main.cpp`, то вводим `git restore main.cpp`.
+
+Давайте для демонстрации работы git'а создадим отдельную ветку `cell_branch`, в которой напишем структуру `Cell` и после чего вольём эту ветку в нашу основную`main` и удалим `cell_branch`:
+
+```
+git restore main.cpp
+git switch -c cell_branch
+[меняем main.cpp]
+git add main.cpp
+git commit -m "implement struct Cell"
+git switch main
+git merge cell_branch
+git branch -D cell_branch
+git log
+```
+
+Вместо `git switch -c cell_branch` можно писать `git checkout -b cell_branch`. После этого мы переключимся на новую ветку (посмотреть список веток можно командой `git branch`). Последняя команда `git log` покажет нам новый коммит, который появился в ветке `main` в результате слияния ветки `cell_branch` и `main`.
