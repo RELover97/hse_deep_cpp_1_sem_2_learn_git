@@ -6,6 +6,16 @@ struct Cell {
     int y;
 };
 
+
+void check_alignment()
+{
+    std::cout << sizeof(Cell) << std::endl;
+    // добавим перед полем x поле char state;
+    std::cout << sizeof(Cell) << std::endl;
+    std::cout << alignof(Cell) << std::endl;
+}
+
+
 int main() 
 {
     std::cout << "Battleship!\n";
@@ -20,6 +30,8 @@ int main()
               << getpid() << '\n';  // process ID (= program ID in Linux)
 
     std::cin.get(); // waiting for one character from command line input
+
+    check_alignment();
 
     return 0;
 }
