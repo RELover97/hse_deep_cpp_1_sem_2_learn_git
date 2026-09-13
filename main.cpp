@@ -32,5 +32,7 @@ int main()
     Board board;
     board.print();
 
+    // debug_print();
+
     return 0;
 }
