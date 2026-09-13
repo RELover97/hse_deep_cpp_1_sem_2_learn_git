@@ -2,6 +2,7 @@
 #include <unistd.h> // getpid()
 
 #include "board.h"
+#include "ship.h"
 
 void check_alignment()
 {
@@ -9,6 +10,21 @@ void check_alignment()
     // добавим перед полем x поле char state;
     std::cout << sizeof(Cell) << std::endl;
     std::cout << alignof(Cell) << std::endl;
+}
+
+// dangling pointer
+Ship* create_ship() {
+    Ship ship;
+    return &ship;
+}
+
+void check_lifetime()
+{
+    Ship ship;
+    std::cout << "Hello here" << std::endl;
+
+    // Ship *ship2 = create_ship(); 
+    // ship2->Fight(); // undefined behaviour!
 }
 
 
@@ -33,6 +49,8 @@ int main()
     board.print();
 
     // debug_print();
+
+    check_lifetime();
 
     return 0;
 }

@@ -181,3 +181,7 @@ objdump -d -M intel --demangle ./build/battleship | less
 `nm -C board.o`
 
 Увидим заглавными буквами внешние символы, а строчными - внутренние. 
+
+## Lifetime
+
+Разберём в коде классическую ошибку с dangling pointer / висящим указателем.
