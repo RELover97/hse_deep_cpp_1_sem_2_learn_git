@@ -62,7 +62,11 @@ int main()
 
     // out of bounds
     int a[] = {1, 2, 3};
-    int b = a[5];
+    // int b = a[5];
+
+    delete other;
+
+    other->x = 1;
 
     return 0;
 }

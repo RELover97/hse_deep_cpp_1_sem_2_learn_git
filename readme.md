@@ -293,3 +293,9 @@ Out of bounds task
 `-fno-omit-frame-pointer` — это флаг gcc, который запрещает компилятору удалять frame pointer (RBP) из функций (нужно для упрощения работы sanitizers)
 
 `./battleship_debug_asan`
+
+Use after free
+
+`g++ -std=c++20 -I include -g -O0 -fsanitize=address -fno-omit-frame-pointer main.cpp src/board.cpp -o battleship_debug_asan`
+
+`./battleship_debug_asan`
