@@ -215,3 +215,27 @@ In GDB:
 `backtrace` / `bt` - call stack
 
 `info locals` -  local vars (have a look at program state in running point)
+
+Change `main`
+
+`g++ -std=c++20 -I include -g -O0 main.cpp src/board.cpp -o battleship_debug`
+
+`gdb ./battleship_debug`
+
+In GDB:
+
+`break main`
+
+`run`
+
+`next`
+
+`next`
+
+`watch x` - следить за изменением состояния `x`(команду используют, только когда `x` уже находится на стеке)
+
+`continue` / `c` - продолжить выполнение программы либо до следующей точки останова, либо до конца
+
+Теперь GDB остановится, когда `x` изменится.
+
+`watchpoint` отвечает на вопрос «когда изменилась эта переменная?»

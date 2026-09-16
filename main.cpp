@@ -32,9 +32,13 @@ int main()
 {
     std::cout << "Battleship!\n";
 
+    int x = 1;
+
     Cell cell{1, 2}; // in stack
 
     Cell* other = new Cell{3, 4}; // in heap
+
+    x += 1;
 
     std::cout << &cell << '\n'; // address of cell
 
@@ -49,6 +53,8 @@ int main()
     board.print();
 
     // debug_print();
+
+    x *= 2;
 
     check_lifetime();
 
