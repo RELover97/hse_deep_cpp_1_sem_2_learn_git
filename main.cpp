@@ -63,15 +63,15 @@ int main()
 
     // out of bounds
     int a[] = {1, 2, 3};
-    // int b = a[5];
+    int b = a[5];
 
-    delete other;
+    // delete other;
 
-    // other->x = 1;
+    other->x = 1;
 
-    int b = std::numeric_limits<int>::max();
+    int c = std::numeric_limits<int>::max();
 
-    int c = b + 1;
+    int d = c + 1;
 
     return 0;
 }

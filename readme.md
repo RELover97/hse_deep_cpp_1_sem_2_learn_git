@@ -308,3 +308,15 @@ UB
 `g++ -std=c++20 -I include -g -O0 -fsanitize=undefined main.cpp src/board.cpp -o battleship_debug_ubsan`
 
 `./battleship_debug_ubsan`
+
+All together
+
+`g++ -std=c++20 -I include -g -O0 -fsanitize=address,undefined -fno-omit-frame-pointer main.cpp src/board.cpp -o battleship_debug_san`
+
+`./battleship_debug_san`
+
+Leak sanitizer
+
+`g++ -std=c++20 -I include -g -O0 -fsanitize=leak main.cpp src/board.cpp -o battleship_debug_lasan`
+
+`./battleship_debug_lasan`
