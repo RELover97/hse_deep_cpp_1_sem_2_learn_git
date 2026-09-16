@@ -58,5 +58,7 @@ int main()
 
     check_lifetime();
 
+    std::cout << (x / 0) << std::endl;
+
     return 0;
 }

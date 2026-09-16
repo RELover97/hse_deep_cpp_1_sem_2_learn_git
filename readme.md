@@ -239,3 +239,17 @@ In GDB:
 Теперь GDB остановится, когда `x` изменится.
 
 `watchpoint` отвечает на вопрос «когда изменилась эта переменная?»
+
+7. Поиск ошибки с помощью gdb
+
+Изменим `main.cpp`
+
+`g++ -std=c++20 -I include -g -O0 main.cpp src/board.cpp -o battleship_debug`
+
+`./battleship_debug` -> floating point exception (core dumped), потому что произошло деление на ноль
+
+`gdb ./battleship_debug`
+
+`run`
+
+`info locals` / `print x`
