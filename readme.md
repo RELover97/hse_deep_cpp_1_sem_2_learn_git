@@ -320,3 +320,11 @@ Leak sanitizer
 `g++ -std=c++20 -I include -g -O0 -fsanitize=leak main.cpp src/board.cpp -o battleship_debug_lasan`
 
 `./battleship_debug_lasan`
+
+## Valgrind
+
+Утилита для поиска ошибок работы с динамической памятью
+
+`g++ -std=c++20 -I include -g -O0 main.cpp src/board.cpp -o battleship_debug`
+
+`valgrind --leak-check=full --track-origins=yes ./battleship_debug`
