@@ -58,7 +58,11 @@ int main()
 
     check_lifetime();
 
-    std::cout << (x / 0) << std::endl;
+    // std::cout << (x / 0) << std::endl;
+
+    // out of bounds
+    int a[] = {1, 2, 3};
+    int b = a[5];
 
     return 0;
 }

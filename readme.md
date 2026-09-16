@@ -279,3 +279,17 @@ Sanitizers:
 `-fsanitize=leak`
 
 для поиска утечек памяти (например, забыли освободить динамическую память по указателю, выделенную с помощью `new`)
+
+Out of bounds task
+
+`g++ -std=c++20 -I include -g -O0 main.cpp src/board.cpp -o battleship_debug`
+
+`./battleship_debug`
+
+Программа может напечатать мусор, упасть или даже «нормально» завершиться.
+
+`g++ -std=c++20 -I include -g -O0 -fsanitize=address -fno-omit-frame-pointer main.cpp src/board.cpp -o battleship_debug_asan`
+
+`-fno-omit-frame-pointer` — это флаг gcc, который запрещает компилятору удалять frame pointer (RBP) из функций (нужно для упрощения работы sanitizers)
+
+`./battleship_debug_asan`
