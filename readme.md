@@ -299,3 +299,12 @@ Use after free
 `g++ -std=c++20 -I include -g -O0 -fsanitize=address -fno-omit-frame-pointer main.cpp src/board.cpp -o battleship_debug_asan`
 
 `./battleship_debug_asan`
+
+
+UB
+
+Для signed integer overflow поведение undefined.
+
+`g++ -std=c++20 -I include -g -O0 -fsanitize=undefined main.cpp src/board.cpp -o battleship_debug_ubsan`
+
+`./battleship_debug_ubsan`

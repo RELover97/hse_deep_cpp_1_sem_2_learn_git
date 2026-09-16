@@ -1,5 +1,6 @@
 #include <iostream>
 #include <unistd.h> // getpid()
+#include <limits>
 
 #include "board.h"
 #include "ship.h"
@@ -66,7 +67,11 @@ int main()
 
     delete other;
 
-    other->x = 1;
+    // other->x = 1;
+
+    int b = std::numeric_limits<int>::max();
+
+    int c = b + 1;
 
     return 0;
 }
